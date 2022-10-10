@@ -11,17 +11,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author SYX
  */
-public class LoginServlet extends HttpServlet {
-    @Override
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+
+@WebServlet(name = "HomeServlet", urlPatterns = {"/home"})
+
+public class HomeServlet extends HttpServlet {
+@Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-                HttpSession session = request.getSession();
+            HttpSession session = request.getSession();
+            String login = (String)session.getAttribute("login");
+            
+            if (login ==null){
+                
+
         }
     }
 
